@@ -1,0 +1,276 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+
+}
+
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .nav-links li {
+    display: inline;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; 
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    flex-direction: column;
+    padding-top: 200px;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="radio"] {
+    margin-right: 10px;
+}
+
+form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #e6b800;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    margin-top: 300px;
+    width: 100%;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 50px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-section ul {
+    list-style-type: none;
+}
+
+.container {
+    width: 50%;
+
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .nav-links li {
+    display: inline;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.home-banner {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.home-banner img {
+    width: 100%;
+    height: auto;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner-text h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.banner-text p {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.signup-button {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 120px;
+    font-size: 18px;
+}
+
+.signup-button:hover {
+    background-color: #ff4c4c;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+    margin: 20px;
+}
+
+.feature img {
+    width: 100%;  
+    height: auto;
+    border-radius: 10px;
+}
+
+.feature h2 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.feature p {
+    font-size: 16px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 50px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+}
+

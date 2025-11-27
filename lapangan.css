@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+  }
+  
+  .search-bar input, .search-bar select, .filter-button {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .filter-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .filter-button:hover {
+    background-color: #555;
+  }
+  
+  .venue-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .venue-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .venue-card {
+    position: relative;
+    width: 200px; 
+    transition: transform 0.2s ease;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .venue-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .venue-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .venue-info {
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  .location, .rating, .price {
+    margin: 5px 0;
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 50px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-section ul {
+    list-style-type: none;
+}

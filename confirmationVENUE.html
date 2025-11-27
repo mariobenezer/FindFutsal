@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konfirmasi Pesanan Venue</title>
+    <link rel="stylesheet" href="confirmationVENUE.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">FindFutsal</div>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="lapangan.html">Sewa Lapangan</a></li>
+          <li><a href="SPAR.html">Sparring</a></li>
+          <li><a href="TIM.html">Bentuk Tim</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="header">
+        <img
+          src="./Assets/Maiin Gandaria.jpg"
+          alt="Lapangan Maiin Gandaria"
+          class="venue-image"
+        />
+        <div class="rating">
+          <span>⭐ 4.80</span>
+        </div>
+        <h1>Lapangan Maiin Gandaria</h1>
+      </div>
+      <div class="confirmation-box">
+        <h2>Konfirmasi Pesanan Lapangan</h2>
+        <div class="venue-details">
+          <p><strong>Lapangan Maiin Gandaria</strong></p>
+          <p>
+            Jl. Ciputat Raya, Kby. Lama Utara, Kec. Kby. Lama, Kota Jakarta
+            Selatan, Daerah Khusus Ibukota Jakarta 12240
+          </p>
+          <p><strong>20 Juni 2024, 20.00 - 22.00 WIB</strong></p>
+        </div>
+        <button class="confirm-button" onclick="printMessage()">
+          KONFIRMASI PESANAN
+        </button>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h2>FindFutsal</h2>
+          <p>
+            FindFutsal adalah platform untuk memudahkan Anda menemukan dan
+            memesan lapangan futsal, mencari lawan sparring, dan membentuk tim
+            futsal.
+          </p>
+          <div class="socials">
+            <a href="#"><img src="./Assets/facebook.svg" alt="Facebook" /></a>
+            <a href="#"><img src="./Assets/twitter.svg" alt="Twitter" /></a>
+            <a href="#"><img src="./Assets/instagram.svg" alt="Instagram" /></a>
+          </div>
+        </div>
+        <div class="footer-section links">
+          <h2>Links</h2>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="lapangan.html">Sewa Lapangan</a></li>
+            <li><a href="SPAR.html">Sparring</a></li>
+            <li><a href="TIM.html">Bentuk Tim</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <p>Email: support@findfutsal.com</p>
+          <p>Phone: +62 123 4567 890</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2024 FindFutsal. All rights reserved.
+      </div>
+    </footer>
+
+    <div id="notification" class="notification">
+      <p>Pesanan Anda telah dikonfirmasi!</p>
+    </div>
+
+    <script src="confirmationVENUE.js"></script>
+  </body>
+</html>

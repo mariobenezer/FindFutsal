@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FindFutsal - Bergabung Tim</title>
+    <link rel="stylesheet" href="TIM.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">FindFutsal</div>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="lapangan.html">Sewa Lapangan</a></li>
+          <li><a href="SPAR.html">Sparring</a></li>
+          <li><a href="TIM.html">Bentuk Tim</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="header">Cari Tim untuk Bergabung</div>
+      <div class="container">
+        <div class="search-bar">
+          <input type="text" id="searchTeam" placeholder="Cari Tim" />
+          <select id="selectCity">
+            <option value="">Pilih Kota</option>
+            <option value="Jakarta Selatan">Jakarta Selatan</option>
+            <option value="Jakarta Utara">Jakarta Utara</option>
+            <option value="Solo">Solo</option>
+            <option value="Tangerang">Tangerang</option>
+            <option value="Yogyakarta">Yogyakarta</option>
+            <option value="Bandung">Bandung</option>
+            <option value="Cirebon">Cirebon</option>
+            <option value="Bekasi">Bekasi</option>
+            <option value="Jakarta Pusat">Jakarta Pusat</option>
+          </select>
+          <button onclick="filterTeams()">Cari Tim</button>
+        </div>
+        <div id="teamList" class="team-list"></div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h2>FindFutsal</h2>
+          <p>
+            FindFutsal adalah platform untuk memudahkan Anda menemukan dan
+            memesan lapangan futsal, mencari lawan sparring, dan membentuk tim
+            futsal.
+          </p>
+          <div class="socials">
+            <a href="#"><img src="./Assets/facebook.svg" alt="Facebook" /></a>
+            <a href="#"><img src="./Assets/twitter.svg" alt="Twitter" /></a>
+            <a href="#"><img src="./Assets/instagram.svg" alt="Instagram" /></a>
+          </div>
+        </div>
+        <div class="footer-section links">
+          <h2>Links</h2>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="lapangan.html">Sewa Lapangan</a></li>
+            <li><a href="SPAR.html">Sparring</a></li>
+            <li><a href="TIM.html">Bentuk Tim</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <p>Email: support@findfutsal.com</p>
+          <p>Phone: +62 123 4567 890</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2024 FindFutsal. All rights reserved.
+      </div>
+    </footer>
+    <script src="JOIN.js"></script>
+    <script>
+      function filterTeams() {
+        const teams = [
+          {
+            id: 1,
+            name: "Team A",
+            city: "Jakarta Selatan",
+            image: "./Assets/team a.png",
+          },
+          {
+            id: 2,
+            name: "Team B",
+            city: "Bandung",
+            image: "./Assets/team b.png",
+          },
+        ];
+
+        const teamList = document.getElementById("teamList");
+        teamList.innerHTML = "";
+
+        teams.forEach((team) => {
+          const teamCard = document.createElement("div");
+          teamCard.className = "team-card";
+          teamCard.innerHTML = `
+                    <img src="${team.image}" alt="${team.name}">
+                    <h3>${team.name}</h3>
+                    <p>${team.city}</p>
+                    <button onclick="joinTeam(${team.id})">Join</button>
+                `;
+          teamList.appendChild(teamCard);
+        });
+      }
+
+      function joinTeam(teamId) {
+        window.location.href = "confirmationTIM.html";
+      }
+    </script>
+  </body>
+</html>

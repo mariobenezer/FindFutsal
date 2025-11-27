@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FindFutsal Venues</title>
+    <link rel="stylesheet" href="lapangan.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">FindFutsal</div>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="lapangan.html">Sewa Lapangan</a></li>
+          <li><a href="SPAR.html">Sparring</a></li>
+          <li><a href="TIM.html">Bentuk Tim</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="search-bar">
+      <input type="text" id="search-input" placeholder="Cari nama venue" />
+      <select id="city-select">
+        <option value="">Pilih Kota</option>
+        <option value="Jakarta Selatan">Jakarta Selatan</option>
+        <option value="Cirebon">Cirebon</option>
+      </select>
+      <button class="filter-button" onclick="searchVenues()">Cari Venue</button>
+    </section>
+
+    <section class="venue-list" id="venueList">
+      <div
+        class="venue-card"
+        data-name="Lapangan Main Gandaria"
+        data-city="Jakarta Selatan"
+        data-date="23 May 2024"
+        data-time="17.00 WIB"
+        data-location="D37 Mini Soccer"
+        data-price="350.000"
+        data-img="./Assets/Maiin Gandaria.jpg"
+      >
+        <img src="./Assets/Maiin Gandaria.jpg" alt="Lapangan Main Gandaria" />
+        <div class="venue-info">
+          <p class="location">Jakarta Selatan</p>
+          <h2>Lapangan Main Gandaria</h2>
+          <p class="rating">⭐ 4.80</p>
+          <p class="price">Mulai 350.000 / sesi</p>
+        </div>
+      </div>
+
+      <div
+        class="venue-card"
+        data-name="D37 Mini Soccer"
+        data-city="Jakarta Selatan"
+        data-date="23 May 2024"
+        data-time="17.00 WIB"
+        data-location="D37 Mini Soccer"
+        data-price="800.000"
+        data-img="./Assets/D37 Mini Soccer.jpg"
+      >
+        <img src="./Assets/D37 Mini Soccer.jpg" alt="D37 Mini Soccer" />
+        <div class="venue-info">
+          <p class="location">Jakarta Selatan</p>
+          <h2>D37 Mini Soccer</h2>
+          <p class="rating">⭐ 4.70</p>
+          <p class="price">Mulai 800.000 / sesi</p>
+        </div>
+      </div>
+
+      <div
+        class="venue-card"
+        data-name="Pitch 98 Kemang"
+        data-city="Jakarta Selatan"
+        data-date="23 May 2024"
+        data-time="17.00 WIB"
+        data-location="D37 Mini Soccer"
+        data-price="900.000"
+        data-img="./Assets/Pitch 98.jpg"
+      >
+        <img src="./Assets/Pitch 98.jpg" alt="Pitch 98 Kemang" />
+        <div class="venue-info">
+          <p class="location">Jakarta Selatan</p>
+          <h2>Pitch 98 Kemang</h2>
+          <p class="rating">⭐ 4.90</p>
+          <p class="price">Mulai 900.000 / sesi</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h2>FindFutsal</h2>
+          <p>
+            FindFutsal adalah platform untuk memudahkan Anda menemukan dan
+            memesan lapangan futsal, mencari lawan sparring, dan membentuk tim
+            futsal.
+          </p>
+          <div class="socials">
+            <a href="#"><img src="./Assets/facebook.svg" alt="Facebook" /></a>
+            <a href="#"><img src="./Assets/twitter.svg" alt="Twitter" /></a>
+            <a href="#"><img src="./Assets/instagram.svg" alt="Instagram" /></a>
+          </div>
+        </div>
+        <div class="footer-section links">
+          <h2>Links</h2>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="lapangan.html">Sewa Lapangan</a></li>
+            <li><a href="SPAR.html">Sparring</a></li>
+            <li><a href="TIM.html">Bentuk Tim</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <p>Email: support@findfutsal.com</p>
+          <p>Phone: +62 123 4567 890</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2024 FindFutsal. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="lapangan.js"></script>
+  </body>
+</html>
