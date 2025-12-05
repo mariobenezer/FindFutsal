@@ -1,5 +1,5 @@
 function confirmBooking() {
-    alert('Pesanan Terkonfirmasi!');
+  alert("Pesanan Terkonfirmasi!");
 
-    window.location.href = 'SPAR.html';
+  window.location.href = "spar.html";
 }

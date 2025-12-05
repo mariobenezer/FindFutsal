@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FindFutsal - Bergabung Tim</title>
-    <link rel="stylesheet" href="TIM.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <nav class="navbar">
-        <div class="logo">FindFutsal</div>
+        <a href="index.html" class="logo">FindFutsal</a>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="lapangan.html">Sewa Lapangan</a></li>
@@ -18,65 +18,61 @@
         </ul>
       </nav>
     </header>
+
     <main>
-      <div class="header">Cari Tim untuk Bergabung</div>
       <div class="container">
         <div class="search-bar">
-          <input type="text" id="searchTeam" placeholder="Cari Tim" />
+          <input type="text" id="searchTeam" placeholder="Cari nama tim..." />
           <select id="selectCity">
-            <option value="">Pilih Kota</option>
+            <option value="">Semua Kota</option>
             <option value="Jakarta Selatan">Jakarta Selatan</option>
             <option value="Jakarta Utara">Jakarta Utara</option>
-            <option value="Solo">Solo</option>
-            <option value="Tangerang">Tangerang</option>
-            <option value="Yogyakarta">Yogyakarta</option>
             <option value="Bandung">Bandung</option>
-            <option value="Cirebon">Cirebon</option>
             <option value="Bekasi">Bekasi</option>
-            <option value="Jakarta Pusat">Jakarta Pusat</option>
+            <option value="Tangerang">Tangerang</option>
           </select>
           <button onclick="filterTeams()">Cari Tim</button>
         </div>
+        
         <div id="teamList" class="team-list"></div>
       </div>
     </main>
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section about">
-          <h2>FindFutsal</h2>
-          <p>
-            FindFutsal adalah platform untuk memudahkan Anda menemukan dan
-            memesan lapangan futsal, mencari lawan sparring, dan membentuk tim
-            futsal.
-          </p>
-          <div class="socials">
-            <a href="#"><img src="./Assets/facebook.svg" alt="Facebook" /></a>
-            <a href="#"><img src="./Assets/twitter.svg" alt="Twitter" /></a>
-            <a href="#"><img src="./Assets/instagram.svg" alt="Instagram" /></a>
-          </div>
+
+    <footer class="modern-footer">
+        <div class="footer-container">
+            <div class="footer-content-row">
+                <div class="footer-col about-col">
+                    <a href="index.html" class="footer-logo">Find<span>Futsal</span>.</a>
+                    <p class="footer-desc">
+                        Platform all-in-one untuk menemukan lapangan, mencari lawan sparring, dan membentuk tim futsal impian Anda.
+                    </p>
+                </div>
+                <div class="footer-col links-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="lapangan.html">Sewa Lapangan</a></li>
+                        <li><a href="SPAR.html">Sparring</a></li>
+                        <li><a href="TIM.html">Bentuk Tim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col social-col">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><img src="Assets/facebook.svg" alt="Facebook"></a>
+                        <a href="#" class="social-link"><img src="Assets/twitter.svg" alt="Twitter"></a>
+                        <a href="#" class="social-link"><img src="Assets/instagram.svg" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2024 FindFutsal. All rights reserved.</p>
+            </div>
         </div>
-        <div class="footer-section links">
-          <h2>Links</h2>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="lapangan.html">Sewa Lapangan</a></li>
-            <li><a href="SPAR.html">Sparring</a></li>
-            <li><a href="TIM.html">Bentuk Tim</a></li>
-          </ul>
-        </div>
-        <div class="footer-section contact">
-          <h2>Contact Us</h2>
-          <p>Email: support@findfutsal.com</p>
-          <p>Phone: +62 123 4567 890</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        &copy; 2024 FindFutsal. All rights reserved.
-      </div>
     </footer>
+
     <script>
-      function filterTeams() {
-        const teams = [
+      const allTeams = [
           {
             id: 1,
             name: "Team A",
@@ -89,12 +85,22 @@
             city: "Bandung",
             image: "./Assets/team b.png",
           },
-        ];
+      ];
 
+      window.onload = function() {
+          renderTeams(allTeams);
+      };
+
+      function renderTeams(data) {
         const teamList = document.getElementById("teamList");
         teamList.innerHTML = "";
 
-        teams.forEach((team) => {
+        if(data.length === 0) {
+            teamList.innerHTML = "<p style='text-align:center; width:100%'>Tim tidak ditemukan.</p>";
+            return;
+        }
+
+        data.forEach((team) => {
           const teamCard = document.createElement("div");
           teamCard.className = "team-card";
           teamCard.innerHTML = `
@@ -107,8 +113,26 @@
         });
       }
 
+      function filterTeams() {
+        const searchInput = document.getElementById("searchTeam").value.toLowerCase();
+        const citySelect = document.getElementById("selectCity").value;
+
+        const filtered = allTeams.filter(team => {
+            return team.name.toLowerCase().includes(searchInput) &&
+                   (citySelect === "" || team.city === citySelect);
+        });
+        
+        renderTeams(filtered);
+      }
+
       function joinTeam(teamId) {
-        window.location.href = "confirmationTIM.html";
+        const selectedTeam = allTeams.find(team => team.id === teamId);
+
+        if (selectedTeam) {
+            localStorage.setItem('selectedTeam', JSON.stringify(selectedTeam));
+            
+            window.location.href = "confirmationTIM.html";
+        }
       }
     </script>
   </body>

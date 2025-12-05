@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Konfirmasi Pesanan Venue</title>
-    <link rel="stylesheet" href="confirmationTIM.css" />
+    <title>Konfirmasi Bergabung Tim</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <nav class="navbar">
-        <div class="logo">FindFutsal</div>
+        <a href="index.html" class="logo">FindFutsal</a>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="lapangan.html">Sewa Lapangan</a></li>
@@ -19,60 +19,46 @@
       </nav>
     </header>
 
-    <div class="container">
-      <div class="confirmation-box">
-        <h2>Ajukan Permintaan Gabung Tim</h2>
-        <div class="team-details">
-          <img
-            src="./Assets/team b.png"
-            alt="AFC Richmond Logo"
-            class="team-logo"
-          />
-          <p><strong>Tim B</strong></p>
-          <p>Lokasi Tim</p>
-          <p>Cirebon</p>
-          <p class="position"><strong>POSISI: CAM</strong></p>
-          <button class="apply-button" onclick="confirmBooking()">
-            Konfirmasi Pesanan
-          </button>
+    <div class="container" style="margin-top: 50px;">
+        <div class="confirmation-box">
+            <h2>Konfirmasi Permintaan Bergabung</h2>
+            
+            <div class="team-details">
+                <img src="" alt="Team Logo" class="team-logo" style="width: 150px; display:block; margin: 0 auto 20px;">
+                <h3 id="teamNameDisplay">Nama Tim</h3>
+                <p id="teamCityDisplay">Lokasi</p>
+                <p class="position">Posisi Dicari: All Positions</p>
+            </div>
+
+            <button class="apply-button" onclick="joinSuccess()">Ajukan Bergabung</button>
         </div>
-      </div>
     </div>
 
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section about">
-          <h2>FindFutsal</h2>
-          <p>
-            FindFutsal adalah platform untuk memudahkan Anda menemukan dan
-            memesan lapangan futsal, mencari lawan sparring, dan membentuk tim
-            futsal.
-          </p>
-          <div class="socials">
-            <a href="#"><img src="./Assets/facebook.svg" alt="Facebook" /></a>
-            <a href="#"><img src="./Assets/twitter.svg" alt="Twitter" /></a>
-            <a href="#"><img src="./Assets/instagram.svg" alt="Instagram" /></a>
-          </div>
-        </div>
-        <div class="footer-section links">
-          <h2>Links</h2>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="lapangan.html">Sewa Lapangan</a></li>
-            <li><a href="SPAR.html">Sparring</a></li>
-            <li><a href="TIM.html">Bentuk Tim</a></li>
-          </ul>
-        </div>
-        <div class="footer-section contact">
-          <h2>Contact Us</h2>
-          <p>Email: support@findfutsal.com</p>
-          <p>Phone: +62 123 4567 890</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        &copy; 2024 FindFutsal. All rights reserved.
-      </div>
+    <footer class="modern-footer">
+        <div class="footer-copyright"><p>&copy; 2025 FindFutsal.</p></div>
     </footer>
-    <script src="confirmationTIM.js"></script>
+
+    <script>
+        window.onload = function() {
+            const savedData = localStorage.getItem('selectedTeam');
+            
+            if (savedData) {
+                const team = JSON.parse(savedData);
+                
+                document.querySelector('.team-logo').src = team.image;
+                document.getElementById('teamNameDisplay').innerText = team.name;
+                document.getElementById('teamCityDisplay').innerText = "Basis: " + team.city;
+            } else {
+                alert("Pilih tim dulu ya!");
+                window.location.href = "TIM.html";
+            }
+        };
+
+        function joinSuccess() {
+            alert("Permintaan Bergabung Terkirim! Kapten tim akan mereview profil Anda.");
+            localStorage.removeItem('selectedTeam');
+            window.location.href = "index.html";
+        }
+    </script>
   </body>
 </html>

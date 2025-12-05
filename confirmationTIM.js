@@ -1,5 +1,5 @@
 function confirmBooking() {
-    alert('Pesanan Terkonfirmasi!');
+  alert("Pesanan Terkonfirmasi!");
 
-    window.location.href = 'TIM.html';
+  window.location.href = "tim.html";
 }

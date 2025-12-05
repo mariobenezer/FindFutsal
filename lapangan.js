@@ -34,3 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+function simpanDataVenue(element) {
+    const venueData = {
+        name: element.getAttribute('data-name'),
+        city: element.getAttribute('data-city'),
+        location: element.getAttribute('data-location'),
+        price: element.getAttribute('data-price'),
+        image: element.getAttribute('data-image')
+    };
+
+    localStorage.setItem('selectedVenue', JSON.stringify(venueData));
+
+    window.location.href = 'confirmationVENUE.html';
+}

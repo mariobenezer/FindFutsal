@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FindFutsal - Sparring</title>
-    <link rel="stylesheet" href="SPAR.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <nav class="navbar">
-        <div class="logo">FindFutsal</div>
+        <a href="index.html" class="logo">FindFutsal</a>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="lapangan.html">Sewa Lapangan</a></li>
@@ -18,62 +18,108 @@
         </ul>
       </nav>
     </header>
+
     <main>
-      <div class="header">Cari Lawan Bertanding</div>
       <div class="container">
         <div class="search-bar">
-          <input type="text" id="searchTeam" placeholder="Cari Klub Lawan" />
+          <input type="text" id="searchTeam" placeholder="Cari nama klub lawan..." />
           <select id="selectCity">
-            <option value="">Pilih Kota</option>
+            <option value="">Semua Kota</option>
             <option value="Jakarta Selatan">Jakarta Selatan</option>
             <option value="Jakarta Utara">Jakarta Utara</option>
-            <option value="Solo">Solo</option>
-            <option value="Tangerang">Tangerang</option>
-            <option value="Yogyakarta">Yogyakarta</option>
             <option value="Bandung">Bandung</option>
-            <option value="Cirebon">Cirebon</option>
-            <option value="Bekasi">Bekasi</option>
-            <option value="Jakarta Pusat">Jakarta Pusat</option>
+            <option value="Tangerang">Tangerang</option>
           </select>
-          <button onclick="filterTeams()">Cari Lawan</button>
+          <button onclick="filterSparring()">Cari Lawan</button>
         </div>
+        
         <div id="teamList" class="team-list"></div>
       </div>
     </main>
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section about">
-          <h2>FindFutsal</h2>
-          <p>
-            FindFutsal adalah platform untuk memudahkan Anda menemukan dan
-            memesan lapangan futsal, mencari lawan sparring, dan membentuk tim
-            futsal.
-          </p>
-          <div class="socials">
-            <a href="#"><img src="./Assets/facebook.svg" alt="Facebook" /></a>
-            <a href="#"><img src="./Assets/twitter.svg" alt="Twitter" /></a>
-            <a href="#"><img src="./Assets/instagram.svg" alt="Instagram" /></a>
-          </div>
+
+    <footer class="modern-footer">
+        <div class="footer-container">
+            <div class="footer-content-row">
+                <div class="footer-col about-col">
+                    <a href="index.html" class="footer-logo">Find<span>Futsal</span>.</a>
+                    <p class="footer-desc">Platform futsal #1 di Indonesia.</p>
+                </div>
+                <div class="footer-col links-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="lapangan.html">Sewa Lapangan</a></li>
+                        <li><a href="SPAR.html">Sparring</a></li>
+                        <li><a href="TIM.html">Bentuk Tim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col social-col">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><img src="Assets/facebook.svg" alt="FB"></a>
+                        <a href="#" class="social-link"><img src="Assets/twitter.svg" alt="TW"></a>
+                        <a href="#" class="social-link"><img src="Assets/instagram.svg" alt="IG"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2024 FindFutsal. All rights reserved.</p>
+            </div>
         </div>
-        <div class="footer-section links">
-          <h2>Links</h2>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="lapangan.html">Sewa Lapangan</a></li>
-            <li><a href="SPAR.html">Sparring</a></li>
-            <li><a href="TIM.html">Bentuk Tim</a></li>
-          </ul>
-        </div>
-        <div class="footer-section contact">
-          <h2>Contact Us</h2>
-          <p>Email: support@findfutsal.com</p>
-          <p>Phone: +62 123 4567 890</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        &copy; 2024 FindFutsal. All rights reserved.
-      </div>
     </footer>
-    <script src="SPAR.js"></script>
+
+    <script>
+      const sparringTeams = [
+        { id: 1, name: "Garuda FC", city: "Jakarta Selatan", image: "Assets/team a.png" },
+        { id: 2, name: "Maung Bandung", city: "Bandung", image: "Assets/team b.png" },
+        { id: 3, name: "Galaxy Futsal", city: "Jakarta Utara", image: "Assets/shanghai port.png" },
+        { id: 4, name: "Tangerang United", city: "Tangerang", image: "Assets/richmond.png" },
+        { id: 5, name: "Red Devils Indo", city: "Jakarta Selatan", image: "Assets/manchester united.png" },
+        { id: 6, name: "Barca Fans Club", city: "Jakarta Selatan", image: "Assets/barcelona.png" }
+      ];
+
+      function renderSparring(data) {
+        const list = document.getElementById("teamList");
+        list.innerHTML = "";
+        
+        if(data.length === 0) {
+            list.innerHTML = "<p style='text-align:center; width:100%'>Lawan tidak ditemukan.</p>";
+            return;
+        }
+
+        data.forEach(team => {
+            const card = document.createElement("div");
+            card.className = "team-card";
+            card.innerHTML = `
+                <img src="${team.image}" alt="${team.name}">
+                <h3>${team.name}</h3>
+                <p>${team.city}</p>
+                <button onclick="tantangTim(${team.id})">Tantang Sparring</button>
+            `;
+            list.appendChild(card);
+        });
+      }
+
+      function filterSparring() {
+          const keyword = document.getElementById("searchTeam").value.toLowerCase();
+          const city = document.getElementById("selectCity").value;
+
+          const filtered = sparringTeams.filter(t => {
+              return t.name.toLowerCase().includes(keyword) && 
+                     (city === "" || t.city === city);
+          });
+          renderSparring(filtered);
+      }
+
+      function tantangTim(id) {
+          const selected = sparringTeams.find(t => t.id === id);
+          localStorage.setItem('selectedSparring', JSON.stringify(selected));
+          window.location.href = "confirmationSPAR.html";
+      }
+
+      window.onload = function() {
+          renderSparring(sparringTeams);
+      };
+    </script>
   </body>
 </html>
